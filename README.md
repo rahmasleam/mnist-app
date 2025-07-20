@@ -39,8 +39,7 @@
 
 ## 
 
-#### 📰 Latest Updates 
-
+## 📰 Latest Updates 📌
 
 * **[2025.05.15]** 🪡🪡🪡 YOLOs-CPP now supports classification.
 
