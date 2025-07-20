@@ -1,6 +1,6 @@
 # YOLOs-CPP - Real-Time Object Detection with YOLO Models in C++
 
-![Cover Image](data/cover.png)
+![Cover Image]([data/cover.png](https://github.com/Geekgineer/YOLOs-CPP/blob/main/data/cover.png))
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![C++](https://img.shields.io/badge/language-C++-blue.svg)
@@ -25,9 +25,6 @@
 - [License](#license)
 - [Acknowledgments](#acknowledgments)
 
-# YOLOs-CPP
-
-![cover](data/cover.png)
 
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
