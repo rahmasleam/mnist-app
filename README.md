@@ -1,3 +1,46 @@
+## YOLO Models Support
+
+### Model Optimization Recommendations
+While ONNX provides cross-platform compatibility, we recommend:
+- Exporting models specifically for your target hardware
+- Optimizing for your specific inference environment
+- Using the provided `export_onnx.py` script for custom PyTorch models
+
+> **Note:** Pre-trained models are provided for convenience, but custom exports typically yield better performance.
+
+### Available Model Architectures
+
+#### 🚀 Standard Models
+| Model Family | Detection | Segmentation | OBB | Pose |
+|-------------|-----------|--------------|-----|------|
+| **YOLOv5**  | `yolo5-n6.onnx` | - | - | - |
+| **YOLOv7**  | `yolo7-tiny.onnx` | - | - | - |
+| **YOLOv8**  | `yolo8n.onnx` | `yolo8n-seg.onnx` | `yolo8n-obb.onnx` | `yolov8n-pose.onnx` |
+| **YOLOv9**  | `yolov9s.onnx` | - | - | - |
+| **YOLOv10** | `yolo10n.onnx` | - | - | - |
+| **YOLOv11** | `yolo11n.onnx` | `yolo11n-seg.onnx` | `yolo11n-obb.onnx` | `yolo11n-pose.onnx` |
+| **YOLOv12** | `yolo12n.onnx` | - | - | - |
+
+#### ⚡ Quantized Models (FP16/INT8)
+| Model Family | Detection | Segmentation |
+|-------------|-----------|--------------|
+| **YOLOv5**  | `yolo5-n6_uint8.onnx` | - |
+| **YOLOv7**  | `yolo7-tiny-uint8.onnx` | - |
+| **YOLOv8**  | `yolo8n_uint8.onnx` | `yolo8n-seg_uint8.onnx` |
+| **YOLOv10** | `yolo10n_uint8.onnx` | - |
+| **YOLOv11** | `yolo11n_uint8.onnx` | `yolo11n-seg_uint8.onnx` |
+
+### Class Label Files
+- `coco.names`: Standard 80-class COCO dataset labels
+- `Dota.names`: Specialized labels for Oriented Bounding Box (OBB) models
+
+### Custom Model Support
+The framework supports:
+- Custom YOLO versions (v5 through v12)
+- User-defined class labels
+- Specialized architectures through ONNX export
+
+
 # YOLOs-CPP - Real-Time Object Detection with YOLO Models in C++
 
 ![Cover Image](https://github.com/Geekgineer/YOLOs-CPP/raw/main/data/cover.png)
