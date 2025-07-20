@@ -71,21 +71,21 @@
   <tr>
     <td>
       <a href="https://www.youtube.com/watch?v=Ax5vaYJ-mVQ">
-        <img src="data/SIG_experience_center_seg_processed.gif" alt="Watch the Demo Video" width="400" height="225"/>
+        <img src="https://github.com/Geekgineer/YOLOs-CPP/raw/main/data/SIG_experience_center_seg_processed.gif" alt="Watch the Demo Video" width="400" height="225"/>
       </a>
     </td>
     <td>
       <a href="https://www.youtube.com/watch?v=Ax5vaYJ-mVQ">
-        <img src="data/SIG_experience_center_seg_processed-2.gif" alt="Watch the Demo Video" width="400" height="225"/>
+        <img src="https://github.com/Geekgineer/YOLOs-CPP/raw/main/data/SIG_experience_center_seg_processed-2.gif" alt="Watch the Demo Video" width="400" height="225"/>
       </a>
     </td>
   </tr>
   <tr>
     <td>
-      <img src="data/final_test_compressed_output.gif" alt="Demo GIF" width="400" height="225"/>
+      <img src="https://github.com/Geekgineer/YOLOs-CPP/blob/main/data/final_test_compressed_output.gif" alt="Demo GIF" width="400" height="225"/>
     </td>
     <td>
-          <img src="data/dance_output.gif" alt="Demo GIF" width="400" height="225"/>
+          <img src="https://github.com/Geekgineer/YOLOs-CPP/blob/main/data/dance_output.gif" alt="Demo GIF" width="400" height="225"/>
     </td>
   </tr>
 </table>
