@@ -1,4 +1,4 @@
-# YOLOs-CPP -  in C++
+# YOLOs-CPP 
 
 ![Cover Image](https://github.com/Geekgineer/YOLOs-CPP/raw/main/data/cover.png)
 
