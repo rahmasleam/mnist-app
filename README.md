@@ -19,7 +19,7 @@
   - [Pose Estimation Example](#pose-estimation-example)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Model Support](#model-support)
+- [YOLOs Models](#yolos-models)
 - [Quantization](#quantization)
 - [Contributing](#contributing)
 - [License](#license)
