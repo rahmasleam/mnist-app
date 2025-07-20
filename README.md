@@ -1,4 +1,4 @@
-# YOLOs-CPP - Real-Time Object Detection with YOLO Models in C++
+# YOLOs-CPP -  in C++
 
 ![Cover Image](https://github.com/Geekgineer/YOLOs-CPP/raw/main/data/cover.png)
 
