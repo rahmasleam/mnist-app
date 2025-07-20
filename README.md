@@ -27,13 +27,6 @@
 
 
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![C++](https://img.shields.io/badge/language-C++-blue.svg)
-![ONNX Runtime](https://img.shields.io/badge/ONNX_Runtime-v1.19.2-brightgreen.svg)
-![OpenCV](https://img.shields.io/badge/OpenCV-4.5.5-brightgreen.svg)
-![CMake](https://img.shields.io/badge/CMake-3.22.1-blue.svg)
-
-
 ## Overview
 **YOLOs-CPP** provides single C++ headers with a high-performance application designed for real-time object detection, segmentation, oriented object detection (OBB), and pose estimation using various YOLO (You Only Look Once) models from [Ultralytics](https://github.com/ultralytics/ultralytics). Leveraging the power of [ONNX Runtime](https://github.com/microsoft/onnxruntime) and [OpenCV](https://opencv.org/), this project provides seamless integration with a unified YOLOv(5,7,8,9,10,11,12) implementation for image, video, and live camera inference. Whether you're developing for research, production, or hobbyist projects, this application offers flexibility and efficiency.
 
