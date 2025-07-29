@@ -1,100 +1,48 @@
-# YOLOs-CPP
+# Contributing to YOLOs-CPP
 
+We welcome contributions from the community! Here's how to get started:
 
-
-&#x20;  &#x20;
-
-## Overview
-
-**YOLOs-CPP** is a high-performance C++ library for real-time object detection, segmentation, oriented object detection (OBB), and pose estimation using multiple YOLO model versions. It integrates ONNX Runtime and OpenCV to support fast, flexible inference across a variety of input types (image, video, camera).
-
-## Features
-
-- **Multiple YOLO Models**: Support for YOLOv5 to YOLOv12
-- **Detection Types**: Standard detection, segmentation, OBB, and pose estimation
-- **Backends**: ONNX Runtime for GPU/CPU acceleration
-- **Real-Time**: Optimized for real-time performance
-- **Cross-Platform**: Linux, Windows, macOS
-- **Easy Integration**: Modular headers and examples for C++ projects
-
-## 🔄 Recent Updates
-
-- **[2025.05.15]**: Classification support added
-- **[2025.03.16]**: Pose estimation support
-- **[2025.02.11]**: OBB support
-- **[2025.01.29]**: YOLOv9+ support
-- **[2024.10.23]**: Initial release
-
-## Quick Start
-
-### Clone the Repository
-
+## 🪄 Setup Your Environment
+1. **Fork** the repository from GitHub
+2. **Clone** your fork:
 ```bash
-git clone https://github.com/Geekgineer/YOLOs-CPP
+git clone https://github.com/YOUR_USERNAME/YOLOs-CPP.git
 cd YOLOs-CPP
 ```
-
-### Build
-
+3. **Create a new branch**:
 ```bash
-./build.sh
+git checkout -b feature/YourFeatureName
 ```
 
-### Run Inference
+## 📦 Make Your Changes
+- Add headers or model support
+- Fix bugs in inference logic
+- Optimize performance or reduce latency
+- Improve documentation in `docs/`
 
-- Image: `./run_image.sh`
-- Video: `./run_video.sh`
-- Camera: `./run_camera.sh`
+## ✅ Commit and Push
+```bash
+git add .
+git commit -m "Add: Your feature description"
+git push origin feature/YourFeatureName
+```
 
-## Supported Models
+## 🚀 Submit Pull Request
+- Go to your GitHub fork
+- Click **"New Pull Request"**
+- Add a descriptive title and explanation
+- Reference related issues if any
 
-| Type         | Examples                   |
-| ------------ | -------------------------- |
-| Standard     | yolo11n.onnx, yolo12n.onnx |
-| Segmentation | yolo11n-seg.onnx           |
-| OBB          | yolo11n-obb.onnx           |
-| Pose         | yolo11n-pose.onnx          |
-| Quantized    | yolo11n\_uint8.onnx        |
+## 📏 Code Style Guidelines
+- Follow modern C++14 practices
+- Prefer descriptive variable/function names
+- Use consistent formatting (follow existing code style)
 
-Custom ONNX export recommended via `models/export_onnx.py`.
+## 📊 Benchmarking and Testing
+Want to contribute benchmarks?
+- Profile inference time using `cv::TickMeter` or `std::chrono`
+- Test across GPU/CPU
+- Validate accuracy vs expected outputs
 
-## 🎥 Demo Gallery
-
-*Video example of object detection output with segmentation masks, bounding boxes and labels. [Click on image!]*
-
-<table>
-  <tr>
-    <td>
-      <a href="https://www.youtube.com/watch?v=Ax5vaYJ-mVQ">
-        <img src="https://github.com/Geekgineer/YOLOs-CPP/raw/main/data/SIG_experience_center_seg_processed.gif" alt="Watch the Demo Video" width="400" height="225"/>
-      </a>
-    </td>
-    <td>
-      <a href="https://www.youtube.com/watch?v=Ax5vaYJ-mVQ">
-        <img src="https://github.com/Geekgineer/YOLOs-CPP/raw/main/data/SIG_experience_center_seg_processed-2.gif" alt="Watch the Demo Video" width="400" height="225"/>
-      </a>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <img src="https://github.com/Geekgineer/YOLOs-CPP/blob/main/data/final_test_compressed_output.gif" alt="Demo GIF" width="400" height="225"/>
-    </td>
-    <td>
-          <img src="https://github.com/Geekgineer/YOLOs-CPP/blob/main/data/dance_output.gif" alt="Demo GIF" width="400" height="225"/>
-    </td>
-  </tr>
-</table>
-
-> For full installation, usage, contribution, and model details, see the `docs/` folder.
-
----
-
-### License
-
-This project is licensed under the MIT License. You are free to use, modify, and distribute this software in accordance with the terms of the license.
-
-### Acknowledgments
-
-See `docs/ACKNOWLEDGMENTS.md` for external contributions and references.
-
+For model-specific development, refer to `docs/DEVELOPMENT.md`.
 
