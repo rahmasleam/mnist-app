@@ -1,46 +1,43 @@
-# Supported Models in YOLOs-CPP
+# Quantization Guide for YOLOs-CPP
 
-## 🧠 YOLO Variants
-This project supports a range of YOLO model versions for detection, segmentation, OBB, and pose estimation.
+## ⚡ What is Quantization?
+Quantization reduces model size and improves inference speed by converting float32 weights to int8 (uint8). This is especially useful for edge devices or real-time performance.
 
-### ✅ Standard Models
-| Purpose         | Model File Name        |
-|-----------------|------------------------|
-| Detection       | yolo11n.onnx, yolo12n.onnx |
-| Segmentation    | yolo11n-seg.onnx, yolo8n-seg.onnx |
-| Oriented Detection | yolo11n-obb.onnx     |
-| Pose Estimation | yolo11n-pose.onnx, yolov8n-pose.onnx |
-| Classification  | (added in 2025.05.15) |
+## 🧩 Provided Quantized Models
+Quantized versions available in `quantized_models/`:
 
-### 🧮 Quantized Models
-| Model Type   | Model File Name         |
-|--------------|--------------------------|
-| YOLOv5       | yolo5-n6_uint8.onnx      |
-| YOLOv7       | yolo7-tiny-uint8.onnx    |
-| YOLOv8       | yolo8n_uint8.onnx        |
-| YOLOv10      | yolo10n_uint8.onnx       |
-| YOLOv11      | yolo11n_uint8.onnx       |
-| YOLOv11 Seg  | yolo11n-seg_uint8.onnx   |
+| Model              | File                         |
+|--------------------|------------------------------|
+| YOLOv5             | yolo5-n6_uint8.onnx           |
+| YOLOv7 Tiny        | yolo7-tiny-uint8.onnx         |
+| YOLOv8             | yolo8n_uint8.onnx             |
+| YOLOv8 Segmentation| yolo8n-seg_uint8.onnx         |
+| YOLOv10            | yolo10n_uint8.onnx            |
+| YOLOv11            | yolo11n_uint8.onnx            |
+| YOLOv11 Segmentation | yolo11n-seg_uint8.onnx     |
 
-> Note: Quantized models provide smaller size and faster inference with slight accuracy trade-offs.
+## ⚙️ Custom Quantization
+To quantize your own YOLO model:
 
-## 📂 Labels
-- `coco.names`: Class labels for general object detection
-- `Dota.names`: Class labels for Oriented Bounding Boxes (OBB)
-
-## 🔁 Exporting ONNX Models
-Use the provided script to export from PyTorch:
+### 1. Export the ONNX Model
+Use the provided script:
 ```bash
 python models/export_onnx.py
 ```
 
-> Tip: Export ONNX models specific to your hardware (e.g. resolution, batch size) for optimal performance.
+### 2. Run the Quantization Script
+```bash
+python quantized_models/yolos_quantization.py --model model.onnx --output model_uint8.onnx
+```
 
-## 📥 Pretrained Models
-Pre-exported models available at:
-[Cloud Drive (MEGA)](https://mega.nz/folder/TvgXVRQJ#6M0IZdMOvKlKY9-dx7Uu7Q)
+### Optional Arguments
+- `--calib_data`: Path to calibration images
+- `--quant_type`: Type of quantization (e.g., static, dynamic)
 
-However, exporting your own models is **highly recommended**.
+## 📝 Tips
+- Always validate performance vs. accuracy trade-off
+- Test on target hardware (e.g., Jetson, Raspberry Pi)
+- Use ONNX Runtime quantization tools for fine-grained control
 
-For quantization and export details, see `docs/QUANTIZATION.md`.
+For help exporting models, see `docs/MODELS.md`.
 
