@@ -1,48 +1,59 @@
-# Contributing to YOLOs-CPP
+# Developer Guide: Integrating YOLOs-CPP
 
-We welcome contributions from the community! Here's how to get started:
+## 💼 Header-Only Integration
+Each detection mode is encapsulated in its own header-only class:
 
-## 🪄 Setup Your Environment
-1. **Fork** the repository from GitHub
-2. **Clone** your fork:
-```bash
-git clone https://github.com/YOUR_USERNAME/YOLOs-CPP.git
-cd YOLOs-CPP
-```
-3. **Create a new branch**:
-```bash
-git checkout -b feature/YourFeatureName
+### Detection
+```cpp
+#include "det/YOLO11.hpp"
+YOLO11Detector detector(modelPath, labelsPath, isGPU);
 ```
 
-## 📦 Make Your Changes
-- Add headers or model support
-- Fix bugs in inference logic
-- Optimize performance or reduce latency
-- Improve documentation in `docs/`
-
-## ✅ Commit and Push
-```bash
-git add .
-git commit -m "Add: Your feature description"
-git push origin feature/YourFeatureName
+### Segmentation
+```cpp
+#include "seg/YOLO11Seg.hpp"
+YOLOv11SegDetector segmentor(modelPath, labelsPath, isGPU);
 ```
 
-## 🚀 Submit Pull Request
-- Go to your GitHub fork
-- Click **"New Pull Request"**
-- Add a descriptive title and explanation
-- Reference related issues if any
+### Oriented Detection (OBB)
+```cpp
+#include "obb/YOLO11-OBB.hpp"
+YOLO11OBBDetector detector(modelPath, labelsPath, isGPU);
+```
 
-## 📏 Code Style Guidelines
-- Follow modern C++14 practices
-- Prefer descriptive variable/function names
-- Use consistent formatting (follow existing code style)
+### Pose Estimation
+```cpp
+#include "pose/YOLO11-POSE.hpp"
+YOLO11POSEDetector poseDetector(modelPath, labelsPath, isGPU);
+```
 
-## 📊 Benchmarking and Testing
-Want to contribute benchmarks?
-- Profile inference time using `cv::TickMeter` or `std::chrono`
-- Test across GPU/CPU
-- Validate accuracy vs expected outputs
+---
 
-For model-specific development, refer to `docs/DEVELOPMENT.md`.
+## 🧠 ONNX Runtime Highlights
+- Uses `Ort::Session` for model loading
+- Execution providers:
+  - `CPUExecutionProvider`
+  - `CUDAExecutionProvider`
+- Dynamic shape handling
+- Optimizations enabled via `ORT_ENABLE_ALL`
+- Efficient memory using `Ort::MemoryInfo`
+
+## 🎨 OpenCV Usage
+- Used for input image decoding, rendering results, and visualization.
+- Drawing utilities include:
+  - `drawBoundingBox`
+  - `drawBoundingBoxMask`
+  - `drawSegmentations`
+  - `drawSegmentationsAndBoxes`
+  - `drawKeypoints`
+
+## 🛠 Tools and Debugging
+- Modify `tools/Config.hpp` to toggle DEBUG or TIME_LOG features
+- Add timing checks using OpenCV or std::chrono
+
+## 📦 Batch Support (Planned)
+- Current support is single image inference
+- Roadmap includes batch processing capabilities
+
+For model usage, see `docs/USAGE.md` and `docs/MODELS.md`.
 
