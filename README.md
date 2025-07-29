@@ -1,59 +1,59 @@
-# Developer Guide: Integrating YOLOs-CPP
+# Installation Guide for YOLOs-CPP
 
-## 💼 Header-Only Integration
-Each detection mode is encapsulated in its own header-only class:
+## Prerequisites
+Ensure the following are installed on your system:
 
-### Detection
-```cpp
-#include "det/YOLO11.hpp"
-YOLO11Detector detector(modelPath, labelsPath, isGPU);
+- **C++ Compiler**: Compatible with C++14 (e.g., `g++`, `clang++`, MSVC)
+- **CMake**: Version 3.0.0 or higher
+- **OpenCV**: Version 4.5.5 or higher
+- **ONNX Runtime**: Installed automatically via build script (versions 1.16.3 and 1.19.2 supported)
+- **Python (Optional)**: For quantization script
+
+## Clone the Repository
+```bash
+git clone https://github.com/Geekgineer/YOLOs-CPP
+cd YOLOs-CPP
 ```
 
-### Segmentation
-```cpp
-#include "seg/YOLO11Seg.hpp"
-YOLOv11SegDetector segmentor(modelPath, labelsPath, isGPU);
+## Configuration Steps
+
+1. **Ensure OpenCV is Installed**
+   - Required for image processing and rendering
+
+2. **Set ONNX Runtime Version**
+   - Open `build.sh`
+   - Set `ONNXRUNTIME_VERSION="1.16.3"` or desired version
+   - Toggle GPU usage by modifying build flags
+
+3. **Select YOLO Version and Data Source**
+   - Edit one of the following files to choose your YOLO version and data input:
+     - `src/camera_inference.cpp`
+     - `src/image_inference.cpp`
+     - `src/video_inference.cpp`
+
+4. **Optional Debug Settings**
+   - Edit `tools/Config.hpp` to enable or disable debugging/timing logs
+
+## Build the Project
+Run the build script to configure and compile the project:
+```bash
+./build.sh
 ```
+This script will:
+- Download ONNX Runtime headers
+- Configure the CMake project
+- Build all inference executables
 
-### Oriented Detection (OBB)
-```cpp
-#include "obb/YOLO11-OBB.hpp"
-YOLO11OBBDetector detector(modelPath, labelsPath, isGPU);
-```
+### Output
+The following binaries will be available in the `build/` directory:
+- `image_inference`
+- `video_inference`
+- `camera_inference`
 
-### Pose Estimation
-```cpp
-#include "pose/YOLO11-POSE.hpp"
-YOLO11POSEDetector poseDetector(modelPath, labelsPath, isGPU);
-```
+## Troubleshooting
+- Ensure OpenCV and CMake are in your system path
+- Check permissions for `build.sh`
+- Confirm you have network access to fetch ONNX headers
 
----
-
-## 🧠 ONNX Runtime Highlights
-- Uses `Ort::Session` for model loading
-- Execution providers:
-  - `CPUExecutionProvider`
-  - `CUDAExecutionProvider`
-- Dynamic shape handling
-- Optimizations enabled via `ORT_ENABLE_ALL`
-- Efficient memory using `Ort::MemoryInfo`
-
-## 🎨 OpenCV Usage
-- Used for input image decoding, rendering results, and visualization.
-- Drawing utilities include:
-  - `drawBoundingBox`
-  - `drawBoundingBoxMask`
-  - `drawSegmentations`
-  - `drawSegmentationsAndBoxes`
-  - `drawKeypoints`
-
-## 🛠 Tools and Debugging
-- Modify `tools/Config.hpp` to toggle DEBUG or TIME_LOG features
-- Add timing checks using OpenCV or std::chrono
-
-## 📦 Batch Support (Planned)
-- Current support is single image inference
-- Roadmap includes batch processing capabilities
-
-For model usage, see `docs/USAGE.md` and `docs/MODELS.md`.
+For detailed usage, see `docs/USAGE.md`.
 
