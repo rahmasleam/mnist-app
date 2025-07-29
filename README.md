@@ -1,12 +1,44 @@
-# YOLOs-CPP
+# YOLOs-CPP 
 
+![Cover Image](data/cover.png)
 
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![C++](https://img.shields.io/badge/language-C++-blue.svg)
+![ONNX Runtime](https://img.shields.io/badge/ONNX_Runtime-v1.19.2-brightgreen.svg)
+![OpenCV](https://img.shields.io/badge/OpenCV-4.5.5-brightgreen.svg)
+![CMake](https://img.shields.io/badge/CMake-3.22.1-blue.svg)
 
-&#x20;  &#x20;
 
 ## Overview
 
 **YOLOs-CPP** is a high-performance C++ library for real-time object detection, segmentation, oriented object detection (OBB), and pose estimation using multiple YOLO model versions. It integrates ONNX Runtime and OpenCV to support fast, flexible inference across a variety of input types (image, video, camera).
+
+*Video example of object detection output with segmentation masks, bounding boxes and labels. [Click on image!]*
+
+<table>
+  <tr>
+    <td>
+      <a href="https://www.youtube.com/watch?v=Ax5vaYJ-mVQ">
+        <img src="https://github.com/Geekgineer/YOLOs-CPP/raw/main/data/SIG_experience_center_seg_processed.gif" alt="Watch the Demo Video" width="400" height="225"/>
+      </a>
+    </td>
+    <td>
+      <a href="https://www.youtube.com/watch?v=Ax5vaYJ-mVQ">
+        <img src="https://github.com/Geekgineer/YOLOs-CPP/raw/main/data/SIG_experience_center_seg_processed-2.gif" alt="Watch the Demo Video" width="400" height="225"/>
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://github.com/Geekgineer/YOLOs-CPP/blob/main/data/final_test_compressed_output.gif" alt="Demo GIF" width="400" height="225"/>
+    </td>
+    <td>
+          <img src="https://github.com/Geekgineer/YOLOs-CPP/blob/main/data/dance_output.gif" alt="Demo GIF" width="400" height="225"/>
+    </td>
+  </tr>
+</table>
+
+
 
 ## Features
 
@@ -64,7 +96,9 @@ Custom ONNX export recommended via `models/export_onnx.py`.
 
 ---
 
-Licensed under the MIT License. See `docs/LICENSE.md`.
+### License
+
+This project is licensed under the MIT License. You are free to use, modify, and distribute this software in accordance with the terms of the license.
 
 ### Acknowledgments
 
