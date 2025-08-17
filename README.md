@@ -427,7 +427,8 @@ The following Python scripts were created or modified by the project owner to ex
        target_link_libraries(camera_inference "${ONNXRUNTIME_DIR}/lib/onnxruntime.lib")
        target_link_libraries(video_inference "${ONNXRUNTIME_DIR}/lib/onnxruntime.lib")
    endif(WIN32)
-  
+```
+
 ## Modifications Made
 The project owner made the following changes:
 - Modified `yolos_quantization.py` to support `yolo11n.onnx` and generate `yolo11n_uint8.onnx`.
