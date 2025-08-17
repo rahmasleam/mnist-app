@@ -479,9 +479,9 @@ The project owner made the following changes:
   - Videos: `output_video.mp4`, `output_video_obb.mp4`, `output_video_pose.mp4`.
   - Camera frames: PNGs in `output_frames`, `output_frames_obb`, or `output_frames_pose`.
 
--If you encounter errors related to `std::filesystem` (requiring C++17):
+### If you encounter errors related to `std::filesystem` (requiring C++17):
   - Open `CMakeLists.txt` in the project root (`C:\Users\DELL\source\repos\YOLOs-CPP`).
-  - Replace:
+  - Replace like in "CMakeLists.txt (modified)":
   - Save the file.
   - Delete the `build` directory and recreate it:
     ```powershell
