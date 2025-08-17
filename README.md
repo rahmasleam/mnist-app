@@ -427,34 +427,7 @@ The following Python scripts were created or modified by the project owner to ex
        target_link_libraries(camera_inference "${ONNXRUNTIME_DIR}/lib/onnxruntime.lib")
        target_link_libraries(video_inference "${ONNXRUNTIME_DIR}/lib/onnxruntime.lib")
    endif(WIN32)
-  ## Notes 
-  If you encounter errors related to `std::filesystem` (requiring C++17):
-     - Open `CMakeLists.txt` in the project root (`C:\Users\DELL\source\repos\YOLOs-CPP`).
-     - Replace:
-     - Save the file.
-     - Delete the `build` directory and recreate it:
-      ```powershell
-      cd C:\Users\DELL\source\repos\YOLOs-CPP
-      Remove-Item -Recurse -Force build
-      mkdir build
-      cd build
-      cmake .. -G "Visual Studio 17 2022" -A x64 -DOpenCV_DIR="C:/opencv/build" -DONNXRUNTIME_DIR="C:/onnxruntime"
-      ```   
-
-### if there error in path 
-
-* Copy DLLs to `build\Release`:
-   - From `C:\opencv\build\x64\vc16\bin`:
-     - `opencv_videoio_ffmpeg460_64.dll`
-     - `opencv_videoio_msmf460_64.dll`
-     - `opencv_world460.dll`
-   - From `C:\onnxruntime\lib`:
-     - `onnxruntime.dll`
-     - `onnxruntime_providers_shared.dll`
-     - `onnxruntime_providers_cuda.dll` (if using GPU)
-     - `onnxruntime_providers_tensorrt.dll` (if using GPU)
-   - Paste all DLLs into `C:\Users\DELL\source\repos\YOLOs-CPP\build\Release`.
-
+  
 ## Modifications Made
 The project owner made the following changes:
 - Modified `yolos_quantization.py` to support `yolo11n.onnx` and generate `yolo11n_uint8.onnx`.
@@ -504,3 +477,30 @@ The project owner made the following changes:
   - Images: `output_<filename>.jpg` (e.g., `output_dog.jpg`, `output_pose.jpg`).
   - Videos: `output_video.mp4`, `output_video_obb.mp4`, `output_video_pose.mp4`.
   - Camera frames: PNGs in `output_frames`, `output_frames_obb`, or `output_frames_pose`.
+
+-If you encounter errors related to `std::filesystem` (requiring C++17):
+  - Open `CMakeLists.txt` in the project root (`C:\Users\DELL\source\repos\YOLOs-CPP`).
+  - Replace:
+  - Save the file.
+  - Delete the `build` directory and recreate it:
+    ```powershell
+    cd C:\Users\DELL\source\repos\YOLOs-CPP
+    Remove-Item -Recurse -Force build
+    mkdir build
+    cd build
+    cmake .. -G "Visual Studio 17 2022" -A x64 -DOpenCV_DIR="C:/opencv/build" -DONNXRUNTIME_DIR="C:/onnxruntime"
+    ```   
+
+### if there error in path 
+
+* Copy DLLs to `build\Release`:
+  - From `C:\opencv\build\x64\vc16\bin`:
+    - `opencv_videoio_ffmpeg460_64.dll`
+    - `opencv_videoio_msmf460_64.dll`
+    - `opencv_world460.dll`
+  - From `C:\onnxruntime\lib`:
+    - `onnxruntime.dll`
+    - `onnxruntime_providers_shared.dll`
+    - `onnxruntime_providers_cuda.dll` (if using GPU)
+    - `onnxruntime_providers_tensorrt.dll` (if using GPU)
+  - Paste all DLLs into `C:\Users\DELL\source\repos\YOLOs-CPP\build\Release`.
